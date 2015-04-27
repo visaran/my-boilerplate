@@ -3,6 +3,8 @@
 @import 'bootstrap';
 
 //base
-@import 'base/reset';
-@import 'base/spacing';
+@import 'base/**/*';
+
+//modules
+@import 'modules/**/*';
 
