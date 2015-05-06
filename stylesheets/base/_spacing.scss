@@ -1,281 +1,41 @@
-$default-space: 20px;
-$default-space--half: $default-space / 2;
-$default-space--smaller: $default-space--half;
-$default-space--smallest: 5px;
-$default-space--2x: $default-space * 2;
+$spaces: 10;
+$spaces-step: 5px;
 
-.margin-top {
-	margin-top: $default-space;
+@mixin make-spaces ($class) {
+    .space-#{$class}-0 {
+        margin-bottom: 0;
+    }
+    
+    @for $i from 1 through $spaces {
+        .space-#{$class}-#{$i} {
+            margin-bottom: $i * $spaces-step;
+        }
+    }
 }
-
-.margin-right {
-	margin-right: $default-space;
+ 
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+@include make-spaces(xs);
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+@media (min-width: $screen-sm-min) {
+    @include make-spaces(sm);
 }
-
-.margin-bottom {
-	margin-bottom: $default-space;
+ 
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+@media (min-width: $screen-md-min) {
+    @include make-spaces(md);
 }
-
-.margin-left {
-	margin-left: $default-space;
-}
-
-.margin {
-	margin-top: $default-space;
-	margin-right: $default-space;
-	margin-bottom: $default-space;
-	margin-left: $default-space;
-}
-
-.margin--half {
-	margin-top: $default-space / 2;
-	margin-right: $default-space / 2;
-	margin-bottom: $default-space / 2;
-	margin-left: $default-space / 2;
-}
-
-.margin--2x {
-	margin-top: $default-space * 2;
-	margin-right: $default-space * 2;
-	margin-bottom: $default-space * 2;
-	margin-left: $default-space * 2;
-}
-
-.margin--sides {
-	margin-right: $default-space;
-	margin-left: $default-space;
-}
-
-.margin--sides--half {
-	margin-right: $default-space / 2;
-	margin-left: $default-space / 2;
-}
-
-.margin--sides--2x {
-	margin-right: $default-space * 2;
-	margin-left: $default-space * 2;
-}
-
-.margin--smallest {
-	margin-top: $default-space--smallest;
-	margin-right: $default-space--smallest;
-	margin-bottom: $default-space--smallest;
-	margin-left: $default-space--smallest;
-}
-
-.margin--verticals {
-	margin-top: $default-space;
-	margin-bottom: $default-space;
-}
-
-.margin--verticals--half {
-	margin-top: $default-space / 2;
-	margin-bottom: $default-space / 2;
-}
-
-.margin--verticals--2x {
-	margin-top: $default-space * 2;
-	margin-bottom: $default-space * 2;
-}
-
-.margin-top {
-	margin-top: $default-space;
-}
-
-.margin-top--half {
-	margin-top: $default-space--half;
-}
-
-.margin-top--2x {
-	margin-top: $default-space * 2;
-}
-
-.margin-top--smallest {
-	margin-top: $default-space--smallest;
-}
-
-.margin-right {
-	margin-right: $default-space;
-}
-
-.margin-right--half {
-	margin-right: $default-space / 2;
-}
-
-.margin-right--2x {
-	margin-right: $default-space * 2;
-}
-
-.margin-right--smallest {
-	margin-right: $default-space--smallest;
-}
-
-.margin-bottom {
-	margin-bottom: $default-space;
-}
-
-.margin-bottom--half {
-	margin-bottom: $default-space / 2;
-}
-
-.margin-bottom--2x {
-	margin-bottom: $default-space * 2;
-}
-
-.margin-bottom--smallest {
-	margin-bottom: $default-space--smallest;
-}
-
-.margin-left {
-	margin-left: $default-space;
-}
-
-.margin-left--half {
-	margin-left: $default-space / 2;
-}
-
-.margin-left--2x {
-	margin-left: $default-space * 2;
-}
-
-.margin-left--smallest {
-	margin-left: $default-space--smallest;
-}
-
-.padding-top {
-	padding-top: $default-space;
-}
-
-.padding-right {
-	padding-right: $default-space;
-}
-
-.padding-bottom {
-	padding-bottom: $default-space;
-}
-
-.padding-left {
-	padding-left: $default-space;
-}
-
-.padding {
-	padding-top: $default-space;
-	padding-right: $default-space;
-	padding-bottom: $default-space;
-	padding-left: $default-space;
-}
-
-.padding--half {
-	padding-top: $default-space / 2;
-	padding-right: $default-space / 2;
-	padding-bottom: $default-space / 2;
-	padding-left: $default-space / 2;
-}
-
-.padding--2x {
-	padding-top: $default-space * 2;
-	padding-right: $default-space * 2;
-	padding-bottom: $default-space * 2;
-	padding-left: $default-space * 2;
-}
-
-.padding--sides {
-	padding-right: $default-space;
-	padding-left: $default-space;
-}
-
-.padding--sides--half {
-	padding-right: $default-space / 2;
-	padding-left: $default-space / 2;
-}
-
-.padding--sides--2x {
-	padding-right: $default-space * 2;
-	padding-left: $default-space * 2;
-}
-
-.padding--smallest {
-	padding-top: $default-space--smallest;
-	padding-right: $default-space--smallest;
-	padding-bottom: $default-space--smallest;
-	padding-left: $default-space--smallest;
-}
-
-.padding--verticals {
-	padding-top: $default-space;
-	padding-bottom: $default-space;
-}
-
-.padding--verticals--half {
-	padding-top: $default-space / 2;
-	padding-bottom: $default-space / 2;
-}
-
-.padding--verticals--2x {
-	padding-top: $default-space * 2;
-	padding-bottom: $default-space * 2;
-}
-
-.padding-top {
-	padding-top: $default-space;
-}
-
-.padding-top--half {
-	padding-top: $default-space / 2;
-}
-
-.padding-top--2x {
-	padding-top: $default-space * 2;
-}
-
-.padding-top--smallest {
-	padding-top: $default-space--smallest;
-}
-
-.padding-right {
-	padding-right: $default-space;
-}
-
-.padding-right--half {
-	padding-right: $default-space / 2;
-}
-
-.padding-right--2x {
-	padding-right: $default-space * 2;
-}
-
-.padding-right--smallest {
-	padding-right: $default-space--smallest;
-}
-
-.padding-bottom {
-	padding-bottom: $default-space;
-}
-
-.padding-bottom--half {
-	padding-bottom: $default-space / 2;
-}
-
-.padding-bottom--2x {
-	padding-bottom: $default-space * 2;
-}
-
-.padding-bottom--smallest {
-	padding-bottom: $default-space--smallest;
-}
-
-.padding-left {
-	padding-left: $default-space;
-}
-
-.padding-left--half {
-	padding-left: $default-space / 2;
-}
-
-.padding-left--2x {
-	padding-left: $default-space * 2;
-}
-
-.padding-left--smallest {
-	padding-left: $default-space--smallest;
+ 
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+@media (min-width: $screen-lg-min) {
+    @include make-spaces(lg);
 }
