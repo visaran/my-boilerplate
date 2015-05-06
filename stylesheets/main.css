@@ -3877,6 +3877,24 @@ input[type="button"].btn-block {
 @media print {
   .hidden-print {
     display: none !important; } }
+h1, .alpha {
+  font-size: 36px; }
+
+h2, .beta {
+  font-size: 30px; }
+
+h3, .gamma {
+  font-size: 24px; }
+
+h4, .delta {
+  font-size: 18px; }
+
+h5, .epsilon {
+  font-size: 14px; }
+
+h6, .zeta {
+  font-size: 12px; }
+
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
